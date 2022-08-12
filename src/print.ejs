@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatório academico</title>
+    <link href="output.css" rel="stylesheet" />
+    <style>
+      table {
+        width: 100%;
+      }
+      th {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="m-8">
+      <div class="flex w-full h-full items-center justify-between">
+        <h1 class="flex text-3xl mb-4 text-[#185875]">Lista de disciplinas</h1>
+        <button class="flex shadow-lg">
+          <a
+            target="_blank"
+            class="flex h-full p-3 w-full bg-[#185875] rounded-md text-white font-bold text-md"
+            href="/pdf"
+            ><svg
+              class="flex text-white w-6 h-6 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Imprimir
+          </a>
+        </button>
+      </div>
+
+      <h2 class="text-xl mb-8 text-[#185875]">Aluna: Rafaelly Rodrigues</h2>
+      <table class="table border-2 border-white text-[#185875]">
+        <thead>
+          <tr class="font-bold text-white bg-[#185875] border-2">
+            <th class="p-2">Disciplina</th>
+            <th class="p-2">Carga horária</th>
+            <th class="p-2">Semestre</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <% if (collegeSubjects.length > 0){ %> <%
+          collegeSubjects.forEach(collegeSubject => { %>
+          <tr class="font-sm border-2 border-blue-300/20">
+            <td class="font-bold p-4"><%= collegeSubject.name %></td>
+            <td class="p-4"><%= collegeSubject.workload %></td>
+            <td class="p-4"><%= collegeSubject.semester %></td>
+          </tr>
+          <% }) %> <% } %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td
+              colspan="3"
+              class="text-red-500 border-2 border-blue-300/20 p-4"
+            >
+              <%= collegeSubjects.length %> disciplinas pendentes
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>

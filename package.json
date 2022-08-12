@@ -1,0 +1,18 @@
+{
+  "name": "pdf-generator",
+  "version": "1.0.0",
+  "description": "- NodeJS\r - Puppeteer\r - EJS\r - TailwinCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "html-pdf": "^3.0.1",
+    "puppeteer": "^16.1.0"
+  }
+}
